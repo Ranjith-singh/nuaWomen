@@ -1,0 +1,27 @@
+{
+  "name": "nua_women",
+  "version": "1.0.0",
+  "description": "A project where users can upload and share their files with others",
+  "license": "ISC",
+  "author": "Ranjith",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.5.0",
+    "cookie-parser": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.3",
+    "mongoose-aggregate-paginate-v2": "^1.1.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.7"
+  }
+}

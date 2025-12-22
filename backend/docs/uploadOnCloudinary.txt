@@ -1,0 +1,18 @@
+working:
+    upload public url
+    get file instance by its filename
+    see if the current user is owner of the file then:
+        provide him the file
+    else:
+        see if he is their in one of his sharedWith Array then:
+            share
+        else:
+            don't share
+file render approach:
+    when a user asks for the file through filename i check
+        1. he is logged in
+        2.i see if he is the owner of the file or one in the sharedWith
+        3.instead of providing authorized cloudinary url i download the file in the repo ./public/temp
+            and show him the local Machine downlaoded server file instead of cloud file that too with 
+            an expiration time after that the file gets deleted from the local Machine.
+        
