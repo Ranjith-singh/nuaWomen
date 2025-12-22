@@ -6,8 +6,10 @@ import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 
 const options = {
-    httpOnly : true,
-    secure : true
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    path: "/"
 }
 
 const generateAccessAndRefreshToken = async (userId) =>{

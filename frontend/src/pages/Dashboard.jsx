@@ -17,7 +17,7 @@ export default function Dashboard() {
     const fetchFiles = async () => {
         try {
             const ownedRes = await api.get('/files/owned');
-            // console.log(ownedRes.data.message.files)
+            console.log("ownedRes: ",ownedRes.data.message.files)
             setOwnedFiles(ownedRes.data.message.files);
 
             const sharedRes = await api.get('/files/shared');
