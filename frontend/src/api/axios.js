@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://nuawomen.onrender.com/api/v1',
+    baseURL: import.meta.env.VITE_BACKEND_URL || 'https://nuawomen-tmcc.onrender.com/api/v1',
     withCredentials: true,
 });
 

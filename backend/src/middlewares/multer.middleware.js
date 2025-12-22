@@ -1,17 +1,22 @@
 import multer from "multer";
+import fs from "fs";
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      // console.log("req.file ",file)
-      cb(null, "./public/temp")
-    },
-    filename: function (req, file, cb) {
-
-      // console.log("req.file ",file)
-      cb(null, file.originalname)
+  destination: function (req, file, cb) {
+    // console.log("req.file ",file)
+    const tempDir = "./public/temp";
+    if (!fs.existsSync(tempDir)) {
+      fs.mkdirSync(tempDir, { recursive: true });
     }
-  })
-  
-export const upload = multer({ 
-    storage : storage
+    cb(null, tempDir)
+  },
+  filename: function (req, file, cb) {
+
+    // console.log("req.file ",file)
+    cb(null, file.originalname)
+  }
+})
+
+export const upload = multer({
+  storage: storage
 })
