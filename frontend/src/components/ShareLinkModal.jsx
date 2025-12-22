@@ -18,7 +18,7 @@ export default function ShareLinkModal({ file, onClose }) {
 
         try {
             const res = await api.post(`/files/shareLink/${file._id || file.id}`, { expireDateTime: expiryDate });
-            console.log("shareLink: ", res)
+            // console.log("shareLink: ", res)
             setGeneratedLink(res.data.data.url);
         } catch (err) {
             setError(err.response?.data?.message || 'Link generation failed');

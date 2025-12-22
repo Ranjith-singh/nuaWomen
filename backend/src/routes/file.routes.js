@@ -15,12 +15,13 @@ import { upload } from "../middlewares/multer.middleware.js";
 const router= Router()
 
 // upload files
-router.route("/register").post(verifyJWT, upload.fields([
+router.route("/register").post(upload.fields([
         {
             name: "addFiles",
             maxCount: 10
         }
     ]),
+    verifyJWT,
     registerFile)
 
 // list user's files (owner + shared)

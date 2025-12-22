@@ -21,7 +21,7 @@ export default function Dashboard() {
             setOwnedFiles(ownedRes.data.message.files);
 
             const sharedRes = await api.get('/files/shared');
-            console.log("Immutable Snapshot:", JSON.parse(JSON.stringify(sharedRes)));
+            // console.log("Immutable Snapshot:", JSON.parse(JSON.stringify(sharedRes)));
             setSharedFiles(sharedRes.data.data.fileMetadata);
         } catch (error) {
             console.error('Error fetching files:', error);

@@ -20,7 +20,7 @@ export default function UploadModal({ onClose, onSuccess }) {
         files.forEach(file => {
             formData.append('addFiles', file);
         });
-        console.log("formData: ", formData.getAll('addFiles'))
+        // console.log("formData: ", formData.getAll('addFiles'))
 
         try {
             await api.post('/files/register', formData, {

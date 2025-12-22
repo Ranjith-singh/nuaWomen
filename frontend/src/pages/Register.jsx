@@ -24,7 +24,7 @@ export default function Register() {
             await register(formData);
             navigate('/login');
         } catch (err) {
-            console.log(typeof (err.response.status))
+            // console.log(typeof (err.response.status))
             if (err.response.status === 409) {
                 setError('User already exists, Login')
             }

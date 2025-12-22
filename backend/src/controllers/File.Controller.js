@@ -32,7 +32,7 @@ const registerFile = asyncHandler( async (req, res) => {
         try{
             // console.log(`file: ${file.originalname}`);
             fileUploadResponse = await uploadOnCloudinary(file.path)
-            console.log(`fileUploadResponse: ${fileUploadResponse}`);
+            // console.log(`fileUploadResponse: ${fileUploadResponse}`);
         }
         catch(err){
             throw new ApiError(500, `Upload failed for ${file.originalname}: ${err?.message || 'unknown error'}`)
@@ -213,7 +213,7 @@ const ShareLink = asyncHandler( async(req, res) => {
     }
 
     const url= `/open/${fileId}/${unixTimestamp.toString()}`;
-    console.log("url: ",url);
+    // console.log("url: ",url);
 
     return res.status(200).json(new ApiResponse(200, {
         url: `${process.env.BACKEND_URL}${req.baseUrl}${url}`,
@@ -224,10 +224,10 @@ const fetchLinkByUrl= asyncHandler(async(req, res)=>{
     const fileId= req.params.fileId
     const expiryDate= req.params.expiryDate
 
-    console.log({
-        fileId,
-        expiryDate
-    })
+    // console.log({
+    //     fileId,
+    //     expiryDate
+    // })
     const file= await File.findById(fileId)
 
     const response = await axios({
