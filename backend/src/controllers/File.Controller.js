@@ -5,8 +5,6 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/AsyncHandler.js";
 import mongoose from "mongoose";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
-import cloudinary from 'cloudinary'
-import crypto from "crypto";
 import axios from "axios";
 
 // allowed mimetypes and max size in bytes (default 20MB)
